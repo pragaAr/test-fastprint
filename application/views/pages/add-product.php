@@ -32,13 +32,6 @@
           <div class="card-body">
             <form action="" method="POST">
               <div class="mb-3">
-                <label for="id" class="form-label">Id Produk</label>
-                <input type="text" class="form-control" name="id" id="id" autofocus>
-                <div class="fst-italic text-danger">
-                  <?= form_error('id'); ?>
-                </div>
-              </div>
-              <div class="mb-3">
                 <label for="nama" class="form-label">Nama Produk</label>
                 <input type="text" class="form-control" name="nama" id="nama">
                 <div class="fst-italic text-danger">
