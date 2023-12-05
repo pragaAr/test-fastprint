@@ -1,0 +1,33 @@
+Dokumentasi.
+
+1. Ambil data dari api
+
+    #menggunakan CURL untuk mendapatkan data dari api dengan method POST
+    #menyertakan username dan password yang telah ditentukan
+
+2. Membuat database yang berisi tabel produk, kategori dan status
+
+    #menggunakan mysql via phpmyadmin bawaan dari xampp
+
+3. Simpan produk yang sudah didapatkan
+
+    #ketika api di hit maka saya mengambil data kategori dan status lalu melakukan looping pengecekan ke tabel produk adakah id_produk yang tersimpan di tabel
+    #jika tidak ada data produk yang ditemukan, maka saya melakukan pengecekan ke tabel kategori dan status adakah data dengan nama_kategori ataupun nama_status yang tersimpan
+    #jika belum maka saya insert lalu return id_kategori dan id_status nya
+    #jika sudah ada maka hanya saya return id_kategori dan id_status nya
+    #kemudian set value untuk di insert ke tabel produk dengan value kategori_id dan status_id dari tabel kategori dan status
+
+4. Buat halaman untuk menampilkan data yang sudah anda simpan
+5. Lalu tampilkan data yang hanya memiliki status "bisa dijual"
+
+    #untuk nomor 4 dan 5, saat halaman selesai dimuat dilakukan pengecekan ke table produk adakah data nya atau tidak
+    #jika data tidak ada atau panjang object nya 0 maka akan ada tombol untuk init data dari api
+    #jika data ada, maka langsung tampilkan data dengan status bisa dijual filter where langsung dari query
+
+6. Buat fitur untuk edit, tambah dan hapus
+7. Untuk fitur tambah dan edit gunakan form validasi (inputan nama harus diisi, dan harga harus berupa inputan angka)
+8. Untuk fitur hapus beri alert/konfirmasi(confirm) ketika di klik hapus
+
+    #validasi dalam fitur edit dan tambah menggunakan form_validation dan form_error untuk memunculkan eror validasi nya
+    #alert konfirmasi hapus saya menggunakan sweetalert2.
+
