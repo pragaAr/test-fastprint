@@ -22,12 +22,14 @@ class Product extends CI_Controller
 	public function get()
 	{
 		$jam = date('H');
+		$date = date('dmy');
+		$dashdate = date('d-m-y');
 
 		$url = 'https://recruitment.fastprint.co.id/tes/api_tes_programmer';
 
 		$postData = array(
-			'username' => 'tesprogrammer041223C' . ($jam + 1), //username akan berubah2 mengikuti waktu server
-			'password' => md5('bisacoding-04-12-23')
+			'username' => 'tesprogrammer' . $date . "C" . ($jam + 1), //username akan berubah2 mengikuti waktu server
+			'password' => md5('bisacoding-' . $dashdate)
 		);
 
 		$ch = curl_init($url);
@@ -49,12 +51,14 @@ class Product extends CI_Controller
 	function initialize()
 	{
 		$jam = date('H');
+		$date = date('dmy');
+		$dashdate = date('d-m-y');
 
 		$url = 'https://recruitment.fastprint.co.id/tes/api_tes_programmer';
 
 		$postData = array(
-			'username' => 'tesprogrammer041223C' . ($jam + 1), //username akan berubah2 mengikuti waktu server
-			'password' => md5('bisacoding-04-12-23')
+			'username' => 'tesprogrammer' . $date . "C" . ($jam + 1), //username akan berubah2 mengikuti waktu server
+			'password' => md5('bisacoding-' . $dashdate)
 		);
 
 		$ch = curl_init($url);
@@ -152,10 +156,10 @@ class Product extends CI_Controller
 		$data['status'] = $this->Product->getDataStatus();
 		$data['kategori'] = $this->Product->getDataKategori();
 
-		$this->form_validation->set_rules('id', 'Id Produk', 'required|numeric', array(
-			'required' => 'Id produk harus diisi',
-			'numeric' => 'Hanya angka yang diperbolehkan'
-		));
+		// $this->form_validation->set_rules('id', 'Id Produk', 'required|numeric', array(
+		// 	'required' => 'Id produk harus diisi',
+		// 	'numeric' => 'Hanya angka yang diperbolehkan'
+		// ));
 		$this->form_validation->set_rules('nama', 'Nama Produk', 'required', array(
 			'required' => 'Nama produk harus diisi'
 		));
